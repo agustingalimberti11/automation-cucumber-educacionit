@@ -24,4 +24,9 @@ public class LoginSteps {
     public void el_login_es_exitoso() {
         new LoginPage(navegador.getDriver()).validarIngreso();
     }
+
+    @Entonces("el login es no exitoso")
+    public void el_login_es_no_exitoso() {
+        new LoginPage(navegador.getDriver()).validarIngresoIncorrecto();
+    }
 }

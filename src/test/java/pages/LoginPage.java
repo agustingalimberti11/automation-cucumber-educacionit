@@ -19,6 +19,9 @@ public class LoginPage extends BasePage{
     @FindBy(xpath = "//h3[contains(text(),'Login Successfully')]")
     private WebElement txtLoginExitoso;
 
+    @FindBy(xpath = "//span[contains(text(),'Enter your userName and password correct')]")
+    private WebElement txtLoginNoExitoso;
+
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -35,5 +38,11 @@ public class LoginPage extends BasePage{
     public void validarIngreso() {
         txtLoginExitoso.click();
     }
+
+    public void validarIngresoIncorrecto() {
+        txtLoginNoExitoso.click();
+    }
+
+
 
 }

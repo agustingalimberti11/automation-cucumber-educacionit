@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -29,5 +30,10 @@ public class BasePage {
 
     protected void seleccionarPorValor(WebElement combo, String valor) {
         new Select(combo).selectByValue(valor);
+    }
+
+    protected void sacarCartel() {
+        ((JavascriptExecutor) driver).executeScript(
+                "document.querySelectorAll('[class*=\"cb-box\"]').forEach(e => e.remove())");
     }
 }
